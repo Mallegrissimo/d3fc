@@ -102,6 +102,14 @@ export default () => {
         align = args[0];
         return base;
     };
+    base.mouseevents = (...args) => {
+        if (!args.length) {
+            return mouseevents;
+        }
+
+        mouseevents = args[0];
+        return base;
+    };
 
     return base;
 };
