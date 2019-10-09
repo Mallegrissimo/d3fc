@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<script src="../libs/d3.js"></script>
+<script src="../libs/d3fc.js"></script>
+<script src="../libs/d3-legend.min.js"></script>
+
+<meta charset="utf-8">
+<style>
+    body {
+        font: 14px sans-serif;
+    }
+    
+    .chart-label {
+        font-size: 25px;
+    }
+    
+    .y-axis-label {
+        white-space: nowrap;
+    }
+    
+    #bubble-chart .legend {
+        position: absolute;
+        bottom: 40px;
+        right: 0;
+        left: auto;
+        width: 170px;
+        height: 110px;
+    }
+    
+    #bubble-chart {
+        position: relative;
+        height: 480px;
+    }
+    
+    #bubble-chart .point {
+        stroke: transparent;
+    }
+    
+    #bubble-chart text.label {
+        stroke: none;
+        fill: #000;
+        font: 12px sans-serif;
+    }
+    
+    .container {
+        position: relative;
+    }
+    
+    #legend {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+</style>
+
+<div class='container'>
+    <div id='bubble-chart' class='chart'>
+        Loading ...
+    </div>
+    <svg id='legend' />
+</div>
+<script src="./script.js"></script>

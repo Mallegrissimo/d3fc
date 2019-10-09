@@ -17,7 +17,8 @@ export default () => {
         decorate: () => {},
         defined: (d, i) => defined(baseValue, crossValue, mainValue)(d, i),
         xScale: scaleIdentity(),
-        yScale: scaleIdentity()
+        yScale: scaleIdentity(),
+        itemDecorate: () => {}
     });
 
     base.values = (d, i) => {
