@@ -15,6 +15,7 @@ export default () => {
     let bandwidth = () => 5;
     let align = 'center';
     let crossValueScaled = (d, i) => base.xScale()(crossValue(d, i));
+    let shapeDecorate = (sel, d, i) => d.shapeDecorate;
 
     base = createBase({
         decorate: () => {},
@@ -49,7 +50,8 @@ export default () => {
             low: base.yScale()(lowValue(d, i)),
             close: base.yScale()(closeRaw),
             width,
-            direction
+            direction,
+            shapeDecorate: base.shapeDecorate()
         };
     };
 
@@ -111,5 +113,14 @@ export default () => {
         return base;
     };
 
+    base.shapeDecorate = (...args) => {
+        if (!args.length) {
+            return shapeDecorate;
+        }
+
+        shapeDecorate = args[0]; //[...shapeDecorate, ...shapeEvents];
+
+        return base;
+    };
     return base;
 };

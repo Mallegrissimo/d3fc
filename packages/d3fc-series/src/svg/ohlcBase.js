@@ -52,11 +52,7 @@ export default (pathGenerator, seriesName) => {
 
                 const gx = singleCandlestick.select('path').attr('d', pathGenerator([d]));
 
-                if (values.mouseevents) {
-                    gx.on("mouseover", (d, i) => values.mouseevents.mouseover(gx, d, i))
-                        .on("mouseout", (d, i) => values.mouseevents.mouseout(gx, d, i));
-
-                }
+                d.shapeDecorate(gx, d, index);
             });
 
             base.decorate()(g, data, index);
